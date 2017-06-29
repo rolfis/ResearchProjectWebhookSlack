@@ -77,7 +77,6 @@ function getSlackUserName(parsedBody, type)
 function getSlackText(parsedBody, type)
 {
     return (
-        '>>> ' + parsedBody.ID + (type.toLowerCase() == 'updated' ? ' updated ' : ' created  ') + ' by ' 
-        + (type.toLowerCase() == 'updated' ? parsedBody.UpdatedBy.trim() : parsedBody.CreatedBy.trim())
+        '>>> `' + parsedBody.ID + '` ' + (type.toLowerCase() == 'updated' ? 'was updated by ' + parsedBody.UpdatedBy.trim() : 'was created by ' + parsedBody.CreatedBy.trim())
     );
 }
